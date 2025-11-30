@@ -13,5 +13,10 @@ public class Order {
     public double basePrice() {
         return basePrice;
     }
+    
+    
+    public static void main(String[] args) {
+		System.out.println("hello");
+	}
 }
 
