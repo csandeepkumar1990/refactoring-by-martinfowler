@@ -8,6 +8,7 @@ public class ShippingCalculatorFinal {
     public boolean qualifiesForFreeShipping(Cart cart) {
     	
         return cart.getTotal() > 50.0;
+        
     }
 }
 
