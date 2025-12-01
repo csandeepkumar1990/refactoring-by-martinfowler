@@ -6,6 +6,29 @@ package com.refactoring.chapter7.movingfeatures.extractclass;
  * The Person class has too many responsibilities. It handles both person data
  * and telephone number data. The telephone-related fields and methods should be
  * extracted into a separate TelephoneNumber class.
+ * 
+ * HOW TO RECOGNIZE YOU NEED THIS REFACTORING:
+ * 
+ * 1. CLASS HAS MULTIPLE RESPONSIBILITIES
+ *    - Person handles: person data AND telephone data (the "AND" is a red flag)
+ * 
+ * 2. FIELDS ARE ALWAYS USED TOGETHER
+ *    - _officeAreaCode and _officeNumber are always used together
+ *    - They form a logical group (telephone number)
+ * 
+ * 3. METHODS ONLY USE A SUBSET OF FIELDS
+ *    - getTelephoneNumber() only uses telephone fields, not _name
+ *    - This suggests those fields belong in their own class
+ * 
+ * 4. YOU CAN DESCRIBE THE CLASS WITH "AND"
+ *    - "This class handles person data AND telephone data"
+ *    - Multiple responsibilities = candidate for extraction
+ * 
+ * WHEN TO DO THIS REFACTORING:
+ * - When adding features would make the class bigger
+ * - When the class is hard to understand
+ * - When you want to reuse part of the class
+ * - When you have tests in place (safety net)
  */
 public class PersonBefore {
     private String _name;
