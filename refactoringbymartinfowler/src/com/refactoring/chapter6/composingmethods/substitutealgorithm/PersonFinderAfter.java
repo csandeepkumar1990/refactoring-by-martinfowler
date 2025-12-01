@@ -1,0 +1,22 @@
+package com.refactoring.chapter6.composingmethods.substitutealgorithm;
+
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * Substitute Algorithm - AFTER Refactoring
+ * 
+ * The algorithm has been replaced with a clearer version that uses a list
+ * of candidates and the contains method. This is more maintainable and
+ * easier to understand.
+ */
+public class PersonFinderAfter {
+    String foundPerson(String[] people) {
+        List<String> candidates = Arrays.asList(new String[] {"Don", "John", "Kent"});
+        for (int i = 0; i < people.length; i++)
+            if (candidates.contains(people[i]))
+                return people[i];
+        return "";
+    }
+}
+
